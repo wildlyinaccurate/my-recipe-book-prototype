@@ -1,7 +1,17 @@
 <ul class="recipe-controls">
-    <li>
-        <a class="recipe-control tooltip" ng-class="{active: recipe.cooked}" ng-click="recipe.cooked = !recipe.cooked" title="{{cookedText(recipe.cooked)}}">
+    <li class="recipe-control" ng-class="{active: recipe.cooked}">
+        <a class="tooltip" ng-click="recipe.cooked = !recipe.cooked" title="{{cookedText(recipe.cooked)}}">
             <i class="icon-food icon-2x"></i>
         </a>
+    </li>
+    <li class="recipe-control">
+        <a class="tooltip" title="Share this recipe on Facebook">
+            <i class="icon-group icon-2x"></i>
+        <a>
+    </li>
+    <li class="recipe-control delete">
+        <a class="tooltip" ng-click="removeRecipe($index)" title="Remove this recipe from your recipe book">
+            <i class="icon-remove icon-2x"></i>
+        <a>
     </li>
 </ul>

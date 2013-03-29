@@ -1,17 +1,42 @@
+$controls-transition-time: 0.3s !default;
+
 .recipe-image {
   position: relative;
 }
 
+.recipe-image:hover .recipe-controls {
+  background-color: rgba($default-color, 0.7);
+
+  .recipe-control {
+    opacity: 1;
+  }
+}
+
 .recipe-controls {
+  z-index: 1;
+  background-color: transparent;
   position: absolute;
-  top: 6px;
-  right: 0;
+  bottom: 2px;
+  padding-top: 6px;
+  width: 100%;
+
+  @include transition(background-color, $controls-transition-time);
+
+  .active,
+  .active a {
+    color: $body-link-color;
+    opacity: 1;
+  }
+
+  .delete {
+    float: right;
+  }
 }
 
 .recipe-control {
+  opacity: 0.55;
   cursor: pointer;
-}
+  float: left;
 
-.recipe-control.active {
-  color: $body-link-color;
+  @include transition(opacity, $controls-transition-time);
 }
