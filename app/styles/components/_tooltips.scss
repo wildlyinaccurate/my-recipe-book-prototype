@@ -1,0 +1,28 @@
+.tooltip {
+  position: relative;
+  color: $body-font-color;
+}
+
+.tooltip:hover:after {
+  background: $info-color;
+  @include border-radius(4px);
+  bottom: 40px;
+  color: $white;
+  content: attr(title);
+  left: 20%;
+  padding: 5px 15px;
+  position: absolute;
+  z-index: 98;
+  width: 220px;
+}
+
+.tooltip:hover:before{
+  border: solid;
+  border-color: $info-color transparent;
+  border-width: 6px 6px 0 6px;
+  bottom: 34px;
+  content: "";
+  left: 50%;
+  position: absolute;
+  z-index: 99;
+}

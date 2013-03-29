@@ -1,0 +1,28 @@
+<div class="sixteen colgrid">
+    <div class="row">
+        <h1>My Recipe Book</h1>
+
+        <p>Welcome back, Joseph! You've saved <strong>{{recipes.length}}</strong> recipes.
+    </div>
+
+    <div class="row">
+        <div ng-include="'views/pagination.html'"></div>
+        <div ng-include="'views/recipe-filter.html'"></div>
+    </div>
+
+    <div class="row" ng-repeat="recipes in rows | startFrom: pagination.current * pagination.pageSize / pagination.rowSize | limitTo: pagination.pageSize / pagination.rowSize">
+        <div class="four columns" ng-repeat="recipe in recipes">
+            <div class="recipe-image">
+                <img ng-src="{{recipe.imageUrl}}">
+                <div ng-include="'views/recipe-controls.html'"></div>
+            </div>
+
+            <h4><a href="{{recipe.url}}">{{recipe.title}}</a></h4>
+            <p>{{recipe.teaser | truncate}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div ng-include="'views/pagination.html'"></div>
+    </div>
+</div>

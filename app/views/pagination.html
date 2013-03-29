@@ -1,0 +1,11 @@
+<div class="pagination">
+    <div class="medium btn pill-left default">
+        <button ng-disabled="pagination.current == 0" ng-click="pagination.current = pagination.current - 1">Prev</a>
+    </div>
+
+    {{pagination.current + 1}} / {{totalPages()}}
+
+    <div class="medium btn pill-right default">
+        <button ng-disabled="pagination.current + 1 >= totalPages()" ng-click="pagination.current = pagination.current + 1">Next</a>
+    </div>
+</div>

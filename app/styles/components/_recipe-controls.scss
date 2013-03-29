@@ -1,0 +1,17 @@
+.recipe-image {
+  position: relative;
+}
+
+.recipe-controls {
+  position: absolute;
+  top: 6px;
+  right: 0;
+}
+
+.recipe-control {
+  cursor: pointer;
+}
+
+.recipe-control.active {
+  color: $body-link-color;
+}
