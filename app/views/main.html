@@ -7,7 +7,11 @@
 
     <div class="row">
         <div ng-include="'views/pagination.html'"></div>
-        <div ng-include="'views/recipe-filter.html'"></div>
+
+        <div class="recipe-filter field">
+            <input type="text" class="search input" ng-model="recipeFilter" placeholder="Search your recipes">
+        </div>
+
     </div>
 
     <div class="row" ng-repeat="recipes in rows | startFrom: pagination.current * pagination.pageSize / pagination.rowSize | limitTo: pagination.pageSize / pagination.rowSize">
